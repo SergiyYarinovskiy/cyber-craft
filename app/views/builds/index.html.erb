@@ -1,0 +1,37 @@
+<div>
+  <table>
+    <tr>
+      <td><span id="chartPassFail"></span></td>
+      <td>
+        <span id="buildsCsvImport">
+          <h2>Import Builds</h2>
+
+          <%= form_tag import_builds_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Import" %>
+          <% end %>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td><span id="chartDurnTime"></span></td>
+    </tr>
+  </table>
+</div>
+
+<%= button_to 'Destroy all builds', destroy_all_builds_path,
+  method: :delete, data: { confirm: 'Are you sure?' } %>
+<br />
+
+<div id="builds"></div>
+
+<script type="text/javascript">
+  $(function() {
+    window.router = new Cyber.Routers.BuildsRouter({
+      builds: <%= @builds.to_json.html_safe -%>,
+      chart_pass_fail: <%= @chart_pass_fail.to_json.html_safe -%>,
+      chart_durn_time: <%= @chart_durn_time.to_json.html_safe -%>
+    });
+    Backbone.history.start();
+  });
+</script>
