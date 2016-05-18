@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :builds, only: :index do
     collection do
-    	post :import
-    	delete :destroy_all
+      post :import
+      delete :destroy_all
     end
   end
 end

@@ -9,8 +9,12 @@
   <script src="http://cdn.zingchart.com/backbone/backbone.zingchart.min.js"></script>
 </head>
 <body>
+  <div class="messages">
+    <span class="notice"><%= notice %></span>
+    <span class="alert"><%= alert %></span>
+    <hr>
+  </div>
 
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>

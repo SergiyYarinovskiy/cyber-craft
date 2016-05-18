@@ -4,12 +4,16 @@ class BuildsController < ApplicationController
   # GET /builds
   def index
     @builds = Build.order(:build_created_at)
-    @chart_pass_fail = {json: build_pass_fail_json,
-                        width: 600,
-                        height: 350}
-    @chart_durn_time = {json: build_durn_time_json,
-                        width: 600,
-                        height: 350}
+    @chart_pass_fail = {
+      json: build_pass_fail_json,
+      width: 600,
+      height: 350
+    }
+    @chart_durn_time = {
+      json: build_durn_time_json,
+      width: 600,
+      height: 350
+    }
   end
 
   # POST /import
@@ -25,7 +29,7 @@ class BuildsController < ApplicationController
 
   # DELETE /destroy_all
   def destroy_all
-    Build.destroy_all
+    Build.delete_all
     redirect_to root_url, notice: 'All builds was destroyed'
   end
 end
