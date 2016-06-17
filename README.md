@@ -8,4 +8,4 @@
 
 Example:
 
-![alt tag](https://github.com/SergiyYarinovskiy/cyber-craft/blob/master/public/images/example.png?raw=true)
+![alt tag](https://raw.githubusercontent.com/SergiyYarinovskiy/cyber-craft/master/public/images/example.png)
